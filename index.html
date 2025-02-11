@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repo Finder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="container bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center text-gray-800">🔎 GitHub Repo Finder</h1>
+        <p class="text-sm text-gray-500 text-center mb-4">Find random repositories by language</p>
+
+        <div class="mb-4">
+            <label for="language" class="block text-sm font-medium text-gray-700">Select a Language</label>
+            <select id="language" class="mt-2 w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+            </select>
+        </div>
+
+        <button id="fetch-repo" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition-all duration-200">
+            Fetch Repository
+        </button>
+
+        <div id="loading" class="hidden mt-4 text-center">
+            <i class="fas fa-spinner fa-spin text-indigo-600 text-2xl"></i>
+        </div>
+
+        <div id="error" class="hidden mt-4 text-center text-red-600">
+            <p>⚠️ Something went wrong. Try again.</p>
+        </div>
+
+        <div id="repo-info" class="hidden mt-6 p-4 bg-gray-50 rounded-md shadow">
+            <h2 id="repo-name" class="text-lg font-semibold text-gray-800"></h2>
+            <p id="repo-description" class="text-gray-600 text-sm mb-2"></p>
+            <div class="flex gap-4 text-gray-600 text-sm">
+                <span><i class="fas fa-star"></i> Stars: <span id="repo-stars"></span></span>
+                <span><i class="fas fa-code-branch"></i> Forks: <span id="repo-forks"></span></span>
+                <span><i class="fas fa-exclamation-circle"></i> Issues: <span id="repo-issues"></span></span>
+            </div>
+            <a id="repo-link" href="#" target="_blank" class="block mt-3 text-blue-500 hover:underline">View on GitHub</a>
+            <button id="refresh-repo" class="w-full bg-green-600 text-white py-2 px-4 rounded-md mt-4 hover:bg-green-700 transition-all">
+                Refresh
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
